@@ -3,6 +3,17 @@ ansible-homebrew ![test](https://github.com/inkatze/ansible-homebrew/workflows/t
 
 Installs hombrew's taps, packages and casks.
 
+Requirements
+------------
+
+ - OS X
+ - [Hombrew](https://brew.sh/)
+
+Role Variables
+--------------
+
+Refer to the [default vars file](defaults/main.yml).
+
 Example Playbook
 ----------------
 
