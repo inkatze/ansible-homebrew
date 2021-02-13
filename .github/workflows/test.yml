@@ -1,0 +1,30 @@
+name: test
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  test-static:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Installing dependencies
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && \
+            brew install ansible
+      - name: Running static checks
+        run: |
+          cd tests && ansible-playbook test.yml --syntax-check
+  test-homebrew:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Installing dependencies
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && \
+            brew install ansible
+      - name: Testing homebrew tasks
+        run: make homebrew

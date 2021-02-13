@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Diego Romero
+  description: Installs listed homebrew packages, apps and taps
+  license: BSD-3-Clause
+  min_ansible_version: 2.4
+  platforms:
+    - name: macOS
+      versions:
+        - High-Sierra
+        - Big-Sur
+  galaxy_tags:
+    - homebrew
+    - osx
+    - mac
+    - macos
+    - macosx
